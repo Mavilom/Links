@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07111f"><meta name="description" content="Central de acessos do setor operacional da Avistar."><title>Central Operacional | Avistar</title><link rel="icon" href="logo_10752.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body><div class="ambient one"></div><div class="ambient two"></div>
+<header><a class="brand" href="#"><span class="brand-mark">A</span><span><b>Avistar</b><small>Central Operacional</small></span></a><div class="status"><i></i>Acessos rápidos</div></header>
+<main><section class="hero"><div><p class="eyebrow">PAINEL DE TRABALHO</p><h1>Tudo o que a operação precisa, em um só lugar.</h1><p class="intro">Encontre plataformas, ferramentas técnicas, documentos e treinamentos com rapidez.</p></div><label class="search"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg><input id="search" type="search" placeholder="Buscar uma ferramenta..." autocomplete="off"><kbd>Ctrl K</kbd></label></section>
+<nav class="filters" aria-label="Categorias"><button class="active" data-filter="all">Todos</button><button data-filter="monitoramento">Monitoramento</button><button data-filter="conectividade">Conectividade</button><button data-filter="gestao">Gestão</button><button data-filter="tecnico">Técnico</button><button data-filter="aprendizado">Aprendizado</button></nav>
+<section class="heading"><div><p class="eyebrow">FERRAMENTAS</p><h2>Central de acessos</h2></div><span id="counter"></span></section><section class="grid" id="grid"></section>
+<div class="empty" id="empty" hidden><b>Nenhuma ferramenta encontrada</b><span>Tente buscar por outro nome ou escolha outra categoria.</span></div></main>
+<footer><span>Avistar Rastreadores</span><span>Central Operacional • <i id="year"></i></span></footer>
+<script>
+const links=[
+['Wialon Avistar','Plataforma principal de monitoramento','WA','monitoramento','https://portal.avistar.online/?lang=br',1],
+['FullTrack','Acesso Águia Track Service','FT','monitoramento','https://fulltrackapp.com/emp/aguiats',1],
+['Controle operacional','Relatórios e acompanhamento','OS','gestao','https://relatorio-ysi0.onrender.com/',1],
+['MultiPortal','Plataforma de monitoramento','MP','monitoramento','https://multiportaldemo.1gps.com.br'],
+['Wialon CMS','Gerenciamento de contas','WC','monitoramento','https://cms.wialon.com/'],
+['Globalstar','Comunicação satelital','GS','monitoramento','https://simplex.globalstar.com/pt/home'],
+['FullControl','Central de acesso','FC','monitoramento','https://www.fullcontrol.com.br/Account/Login'],
+['Chat MultiPortal','Atendimento e suporte','MC','monitoramento','https://mportal.mysuite2.com.br/client/login.php'],
+['SmartSim','Gestão de conectividade Algar','SS','conectividade','http://smartmanager2.smartsim.com.br/'],
+['Hinova Conecta','Gestão de linhas e chips','HC','conectividade','https://arya.hinovaconecta.com.br/user/login'],
+['LinksField','Plataforma Saitro','LF','conectividade','http://linksfield.saitro.com/'],
+['Avatek','Gestão de conectividade','AV','conectividade','https://avatek.saitro.com/sistema/login/'],
+['KORE Wireless','Portal de conectividade','KO','conectividade','https://porthal.korewireless.com.br/login'],
+['Mapa de antenas','Cobertura de rede celular','4G','conectividade','https://conexis.org.br/numeros/mapa-de-antenas-completo/'],
+['Clicksign','Assinatura de documentos','CS','gestao','https://app.clicksign.com/'],
+['PipeRun','CRM e relacionamento','PR','gestao','https://crmpiperun.com/'],
+['Trello','Quadros de atividades','TR','gestao','https://trello.com/u/suportetecnico419/boards'],
+['Prime Benefícios','Intranet de frota','PB','gestao','https://primebeneficios.com.br/Intranet/Frota/'],
+['Planilha Grafana','Base de dados operacional','GP','gestao','https://docs.google.com/spreadsheets/u/3/d/18sN02mDqcwc8d21raGLPGqgtf8V0Ikp25n1QdzjmdgQ/edit?usp=sharing'],
+['Grafana','Painel de indicadores','GF','gestao','https://pedrolimateles.grafana.net/public-dashboards/17d2191b8ca74f9a82040a909edf13ad'],
+['Notas','Anotações rápidas','NT','gestao','https://mavilom.github.io/Notas/'],
+['Controle de estoque','Planilha no OneDrive','CE','gestao','https://onedrive.live.com/personal/4aba62d9465c87a0/_layouts/15/Doc.aspx?sourcedoc=%7B03d281c9-69f5-45f9-b144-272a3ecde522%7D&action=default'],
+['ChatGPT','Assistente de trabalho','AI','gestao','https://chatgpt.com/'],
+['Scuti','Ferramenta Suntech','SC','tecnico','https://scuti.suntechdobrasil.com.br/'],
+['Suntech Brasil','Rastreadores e documentação','ST','tecnico','https://www.suntechdobrasil.com.br/produtos/rastreadores'],
+['Wiki Jimi IoT','Configurações e documentação','JI','tecnico','https://wiki-foconavia.newtectelemetria.com.br/pt-br/Configura%C3%A7%C3%B5es-JC450'],
+['Wialon ID Checker','Consulta de identificação GPS','ID','tecnico','https://id.wialon.net/'],
+['Hardware Wialon','Catálogo de equipamentos','HW','tecnico','https://wialon.com/en/gps-hardware'],
+['Central de ajuda Wialon','Manuais e orientações','WH','tecnico','https://help.wialon.com/'],
+['Configuradores','Programas MultiPortal','CF','tecnico','https://programas.1gps.com.br/CONFIGURADORES/'],
+['Conversor OneWire','Conversão de identificação','1W','tecnico','https://www.getscale.com.br/conversor-id-onewire'],
+['Checklist operacional','Rotina e conferência','CK','tecnico','https://mavilom.github.io/Checklist_OP/'],
+['Rede de instaladores','Instaladores de rastreador','IR','tecnico','https://www.instaladoresderastreador.com.br'],
+['Treinamento Wialon','Portal de capacitação','WT','aprendizado','https://my.wialon.com/pt'],
+['Danki Code','Cursos de programação','DC','aprendizado','https://cursos.dankicode.com/login'],
+['Login com Firebase','Treinamento em vídeo','YT','aprendizado','https://www.youtube.com/watch?v=NZzekYgLYdg'],
+['Playlist técnica','Conteúdo de capacitação','PL','aprendizado','https://www.youtube.com/playlist?list=PLnoKFquRTMNiKSiPTgQ-dL4CxervHO1ki'],
+['Curso de programação','Aulas no YouTube','JS','aprendizado','https://www.youtube.com/watch?v=vEwPnjqWQ-g&list=PL2Fdisxwzt_d590u3uad46W-kHA0PTjjw&index=1']];
+const grid=document.querySelector('#grid');grid.innerHTML=links.map(x=>`<a class="card ${x[5]?'featured':''}" data-category="${x[3]}" href="${x[4]}" target="_blank" rel="noopener"><span class="icon">${x[2]}</span><span class="copy"><b>${x[0]}</b><small>${x[1]}</small></span><span class="arrow">↗</span></a>`).join('');
+const search=document.querySelector('#search'),cards=[...document.querySelectorAll('.card')],buttons=[...document.querySelectorAll('.filters button')],counter=document.querySelector('#counter'),empty=document.querySelector('#empty');let category='all';const norm=v=>v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();function update(){const q=norm(search.value.trim());let n=0;cards.forEach(c=>{c.hidden=!((category==='all'||c.dataset.category===category)&&(!q||norm(c.textContent).includes(q)));if(!c.hidden)n++});counter.textContent=`${n} ${n===1?'acesso':'acessos'}`;empty.hidden=n!==0}buttons.forEach(b=>b.onclick=()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');category=b.dataset.filter;update()});search.oninput=update;document.onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus()}if(e.key==='Escape'&&document.activeElement===search){search.value='';search.blur();update()}};document.querySelector('#year').textContent=new Date().getFullYear();update();
+</script></body></html>
