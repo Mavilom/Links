@@ -1,18 +1,55 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07111f"><meta name="description" content="Central de acessos do setor operacional da Avistar."><title>Central Operacional | Avistar</title><link rel="icon" href="logo_10752.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
-<body><div class="ambient one"></div><div class="ambient two"></div>
-<header><a class="brand" href="#"><span class="brand-mark">A</span><span><b>Avistar</b><small>Central Operacional</small></span></a><div class="status"><i></i>Acessos rápidos</div></header>
-<main><section class="hero"><div><p class="eyebrow">PAINEL DE TRABALHO</p><h1>Tudo o que a operação precisa, em um só lugar.</h1><p class="intro">Encontre plataformas, ferramentas técnicas, documentos e treinamentos com rapidez.</p></div><label class="search"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg><input id="search" type="search" placeholder="Buscar uma ferramenta..." autocomplete="off"><kbd>Ctrl K</kbd></label></section>
-<nav class="filters" aria-label="Categorias"><button class="active" data-filter="all">Todos</button><button data-filter="monitoramento">Monitoramento</button><button data-filter="conectividade">Conectividade</button><button data-filter="gestao">Gestão</button><button data-filter="tecnico">Técnico</button><button data-filter="aprendizado">Aprendizado</button></nav>
-<section class="heading"><div><p class="eyebrow">FERRAMENTAS</p><h2>Central de acessos</h2></div><span id="counter"></span></section><section class="grid" id="grid"></section>
-<div class="empty" id="empty" hidden><b>Nenhuma ferramenta encontrada</b><span>Tente buscar por outro nome ou escolha outra categoria.</span></div></main>
-<footer><span>Avistar Rastreadores</span><span>Central Operacional • <i id="year"></i></span></footer>
+<body>
+    <div class="ambient one"></div>
+    <div class="ambient two"></div>
+<header>
+    <a class="brand" href="#">
+        <span class="brand-mark">A</span>
+            <span><b>Avistar</b><small>Central Operacional</small>
+        </span>
+    </a>
+        <div class="status"><i></i>Acessos rápidos</div>
+</header>
+<main>
+    <section class="hero">
+            <div><p class="eyebrow">PAINEL DE TRABALHO</p>
+                <h1>Tudo o que a operação precisa, em um só lugar.</h1>
+                <p class="intro">Encontre plataformas, ferramentas técnicas, documentos e treinamentos com rapidez.</p>
+            </div>
+        <label class="search">
+            <svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+            <input id="search" type="search" placeholder="Buscar uma ferramenta..." autocomplete="off"><kbd>Ctrl K</kbd>
+        </label>
+    </section>
+    <nav class="filters" aria-label="Categorias">
+        <button class="active" data-filter="all">Todos</button>
+        <button data-filter="monitoramento">Monitoramento</button>
+        <button data-filter="conectividade">Conectividade</button>
+        <button data-filter="gestao">Gestão</button>
+        <button data-filter="tecnico">Técnico</button>
+        <button data-filter="aprendizado">Aprendizado</button>
+    </nav>
+    <section class="heading">
+        <div><p class="eyebrow">FERRAMENTAS</p>
+            <h2>Central de acessos</h2></div>
+            <span id="counter"></span>
+    </section>
+    <section class="grid" id="grid"></section>
+    <div class="empty" id="empty" hidden><b>Nenhuma ferramenta encontrada</b>
+        <span>Tente buscar por outro nome ou escolha outra categoria.</span>
+    </div>
+</main>
+<footer>
+    <span>Avistar Rastreadores</span>
+    <span>Central Operacional • <i id="year"></i></span>
+</footer>
 <script>
 const links=[
-['Tags Avistar','Sistema de informação TAG','TAG','monitoramento','https://mavilom.github.io/formulario-os-whatsapp/'1],
 ['Wialon Avistar','Plataforma principal de monitoramento','WA','monitoramento','https://portal.avistar.online/?lang=br',1],
 ['FullTrack','Acesso Águia Track Service','FT','monitoramento','https://fulltrackapp.com/emp/aguiats',1],
 ['Controle operacional','Relatórios e acompanhamento','OS','gestao','https://relatorio-ysi0.onrender.com/',1],
+['Operacional TAG','Relatórios e acompanhamento','OS','gestao','https://mavilom.github.io/formulario-os-whatsapp/',1],
 ['MultiPortal','Plataforma de monitoramento','MP','monitoramento','https://multiportaldemo.1gps.com.br'],
 ['Wialon CMS','Gerenciamento de contas','WC','monitoramento','https://cms.wialon.com/'],
 ['Globalstar','Comunicação satelital','GS','monitoramento','https://simplex.globalstar.com/pt/home'],
